@@ -32,7 +32,6 @@
 
                 <div class="my-container">
                     <ul>
-                        <!-- al bind di class (:class) posso assegnare un array dentro al quale posso utilizzare un operatore ternario -->
                         <li v-for="todo in todos" :class="[todo.done ? 'done' : '', 'todo']">
                             <span @click="toggleDoneOf(todo)">
                                 {{ todo.text }}
@@ -46,7 +45,6 @@
                 <div class="my-container">
                     <h2>Completati</h2>
                     <ul>
-                        <!-- al bind di class (:class) posso assegnare un array dentro al quale posso utilizzare un operatore ternario -->
                         <li v-for="todo in todoChecked" class="todo">
                             <span>
                                 {{ todo }}
