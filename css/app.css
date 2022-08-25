@@ -1,0 +1,56 @@
+html {
+    background-color: lightslategray;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+h1,
+h2 {
+    color: salmon;
+    text-shadow: #000 1px 1px 2px;
+    margin-bottom: 0.5rem;
+}
+
+.my-container {
+    max-width: 750px;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    margin-bottom: 1rem;
+}
+
+.todo {
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 10px;
+    background-color: white;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.todo.done span {
+    color: grey;
+    text-decoration: line-through;
+}
+
+.todo i {
+    color: red;
+}
+
+.todo.done i {
+    color: green;
+}

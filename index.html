@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang='it'>
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <!-- Style -->
+        <link rel='stylesheet' href='css/app.css'>
+
+        <!-- VUE -->
+        <script src='https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js'></script>
+
+        <title>Todo List</title>
+
+    </head>
+
+    <body>
+
+        <div id="app">
+            <header>
+                <h1>Todo List</h1>
+            </header>
+
+            <main>
+                <div class="my-container">
+                    <input type="text" placeholder="Cose da fare..." v-model="newTodo" @keypress="addTodoEnter">
+                    <button @click="addTodo">Aggiungi</button>
+                </div>
+
+                <div class="my-container">
+                    <ul>
+                        <!-- al bind di class (:class) posso assegnare un array dentro al quale posso utilizzare un operatore ternario -->
+                        <li v-for="todo in todos" :class="[todo.done ? 'done' : '', 'todo']">
+                            <span @click="toggleDoneOf(todo)">
+                                {{ todo.text }}
+                            </span>
+                            <i v-if="!todo.done" @click="toggleDoneOf(todo)" class="fas fa-xmark"></i>
+                            <i v-else class="fas fa-check" @click="toggleDoneOf(todo)"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="my-container">
+                    <h2>Completati</h2>
+                    <ul>
+                        <!-- al bind di class (:class) posso assegnare un array dentro al quale posso utilizzare un operatore ternario -->
+                        <li v-for="todo in todoChecked" class="todo">
+                            <span>
+                                {{ todo }}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+
+        <!-- FONT AWESOME -->
+        <script src='https://kit.fontawesome.com/b0485a66c8.js' crossorigin='anonymous'></script>
+
+        <script src='js/app.js'></script>
+
+    </body>
+
+</html>
