@@ -45,8 +45,5 @@ const app = new Vue({
             })
             this.newTodo = ''
         },
-        addTodoEnter(event) {
-            if (event.key === 'Enter') this.addTodo()
-        }
     },
 })

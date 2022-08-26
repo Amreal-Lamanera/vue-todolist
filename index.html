@@ -23,7 +23,7 @@
             <main>
                 <div class="my-container">
                     <h1>Todo List</h1>
-                    <input type="text" placeholder="Cose da fare..." v-model="newTodo" @keypress="addTodoEnter">
+                    <input type="text" placeholder="Cose da fare..." v-model="newTodo" @keyup.enter="addTodo">
                     <button @click="addTodo">Aggiungi</button>
                 </div>
 
