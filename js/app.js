@@ -25,11 +25,12 @@ const app = new Vue({
     },
     computed: {
         todoChecked() {
-            const checked = new Array;
-            this.todos.forEach(element => {
-                if (element.done) checked.push(element.text)
-            });
-            return checked;
+            // const checked = new Array;
+            // this.todos.forEach(element => {
+            //     if (element.done) checked.push(element.text)
+            // });
+            // return checked;
+            return this.todos.filter((el) => el.done)
         }
     },
     methods: {
